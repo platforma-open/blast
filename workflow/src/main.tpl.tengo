@@ -1,0 +1,78 @@
+// BLAST
+
+wf := import("@platforma-sdk/workflow-tengo:workflow")
+ll := import("@platforma-sdk/workflow-tengo:ll")
+file := import("@platforma-sdk/workflow-tengo:file")
+exec := import("@platforma-sdk/workflow-tengo:exec")
+assets := import("@platforma-sdk/workflow-tengo:assets")
+times := import("times")
+
+wf.validateArgs({
+	__options__: "closed",
+	dbRef: `any`, // ref
+	sequences: `string`,
+	fastaFile: `any`,
+	blastnProgram: `string`,
+	blastpProgram: `string`
+})
+
+wf.prepare(func(args){
+	return {
+		db: wf.resolve(args.dbRef)
+	}
+})
+
+blastnSw := assets.importSoftware("@platforma-open/milaboratories.software-blast:blastn")
+blastpSw := assets.importSoftware("@platforma-open/milaboratories.software-blast:blastp")
+
+wf.body(func(args) {
+
+	spec := args.db.spec
+
+	alphabetType := args.db.spec.annotations["pl7.app/blast/alphabetType"]
+
+	blastSw := undefined
+	task := undefined
+
+	if (alphabetType == "nucl") {
+		blastSw = blastnSw
+		task = args.blastnProgram
+	} else if (alphabetType == "prot") {
+		blastSw = blastpSw
+		task = args.blastpProgram
+	} else {
+		ll.panic("unknown sequence type: ", alphabetType, spec)
+	}
+
+	blast := exec.builder().
+				software(blastSw).
+				arg("-db").arg("db").
+				arg("-query").arg("query.fasta").
+				arg("-task").arg(task).
+				arg("-out").arg("out.txt").
+				addFiles(args.db.data).
+				saveFile("out.txt").
+				cache(48 * times.hour)
+
+	outputs := {}
+
+	fImport := undefined
+	if !is_undefined(args.fastaFile) {
+		fImport = file.importFile(args.fastaFile)
+		blast.addFile("query.fasta", fImport.file)
+		outputs.importHandle = fImport.handle
+	} else if !is_undefined(args.sequences) {
+		blast.writeFile("query.fasta", args.sequences)
+	}
+
+	blast = blast.run()
+
+	outputs.log = blast.getStdoutStream() 
+	outputs.txtAlignments = file.exportFile(blast.getFile("out.txt"))
+
+	return {
+		outputs: outputs,
+
+		exports: {}
+	}
+})

@@ -1,0 +1,49 @@
+{
+  "name": "@platforma-open/milaboratories.blast",
+  "version": "1.0.0",
+  "scripts": {
+    "pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json,vue}\"",
+    "build": "rm -rf ./block-pack && block-tools pack",
+    "build:model": "cd model && pnpm run build",
+    "build:all": "pnpm -r run build",
+    "prepublishOnly": "block-tools pack && block-tools publish -r 's3://milab-euce1-prod-pkgs-s3-block-registry/pub/releases/?region=eu-central-1'"
+  },
+  "files": [
+    "index.d.ts",
+    "index.js"
+  ],
+  "dependencies": {
+    "@platforma-open/milaboratories.blast.workflow": "workspace:*",
+    "@platforma-open/milaboratories.blast.model": "workspace:*",
+    "@platforma-open/milaboratories.blast.ui": "workspace:*"
+  },
+  "block": {
+    "components": {
+      "workflow": "@platforma-open/milaboratories.blast.workflow/dist/tengo/tpl/main.plj.gz",
+      "model": "@platforma-open/milaboratories.blast.model/dist/model.json",
+      "ui": "@platforma-open/milaboratories.blast.ui/dist"
+    },
+    "meta": {
+      "title": "BLAST Local Database",
+      "logo": "file:logos/block-logo.png",
+      "url": "https://github.com/platforma-open/blast",
+      "docs": "https://github.com/platforma-open/blast",
+      "support": "mailto:support@milaboratories.com",
+      "description": "Basic Local Alignment Search Tool with your local database",
+      "longDescription": "file:./docs/description.md",
+      "changelog": "file:CHANGELOG.md",
+      "tags": [
+        "blast"
+      ],
+      "organization": {
+        "name": "MiLaboratories Inc",
+        "url": "https://milaboratories.com/",
+        "logo": "file:logos/milaboratories.png"
+      }
+    }
+  },
+  "devDependencies": {
+    "@changesets/cli": "catalog:",
+    "@platforma-sdk/block-tools": "catalog:"
+  }
+}
