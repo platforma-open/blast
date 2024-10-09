@@ -1,4 +1,4 @@
-## 1.0.0
+# @platforma-open/milaboratories.blast.ui
 
 ## 1.0.1
 
@@ -7,7 +7,3 @@
 - e8557d1: Changeset init
 - Updated dependencies [e8557d1]
   - @platforma-open/milaboratories.blast.model@1.0.1
-  - @platforma-open/milaboratories.blast.ui@1.0.1
-  - @platforma-open/milaboratories.blast.workflow@1.0.1
-
-Initial release.
