@@ -34,9 +34,9 @@ jobs:
       npmrc-config: |
         {
           "registries": {
-            "https://npm.pkg.github.com/": {
+            "https://registry.npmjs.org/": {
               "scopes": ["platforma-open"],
-              "tokenVar": "NODE_AUTH_TOKEN"
+              "tokenVar": "NPMJS_TOKEN"
             }
           }
         }
