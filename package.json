@@ -29,11 +29,12 @@
       "url": "https://github.com/platforma-open/blast",
       "docs": "https://github.com/platforma-open/blast",
       "support": "mailto:support@milaboratories.com",
-      "description": "Basic Local Alignment Search Tool with your local database",
+      "description": "Align your nucleotide or amino acid sequences against a local database using BLAST.",
       "longDescription": "file:./docs/description.md",
       "changelog": "file:CHANGELOG.md",
       "tags": [
-        "blast"
+        "blast",
+        "align"
       ],
       "organization": {
         "name": "MiLaboratories Inc",
