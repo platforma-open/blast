@@ -5,3 +5,7 @@ dev/
 work/
 .test_auth.json
 log/
+.DS_Store
+.test_auth.json
+.turbo
+vite.config.*.timestamp-*
