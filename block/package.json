@@ -31,7 +31,7 @@
       "support": "mailto:support@milaboratories.com",
       "description": "Basic Local Alignment Search Tool with your local database",
       "longDescription": "file:../docs/description.md",
-      "changelog": "file:../CHANGELOG.md",
+      "changelog": "file:./CHANGELOG.md",
       "tags": [
         "blast"
       ],
