@@ -13,8 +13,8 @@ catalogs:
       specifier: ^1.14.9
       version: 1.14.10
     '@platforma-open/milaboratories.software-blast':
-      specifier: ^1.1.1
-      version: 1.1.1
+      specifier: ^1.1.5
+      version: 1.1.5
     '@platforma-sdk/block-tools':
       specifier: ^2.3.4
       version: 2.3.4
@@ -136,10 +136,10 @@ importers:
         version: 1.14.10
       '@platforma-open/milaboratories.software-blast':
         specifier: 'catalog:'
-        version: 1.1.1
+        version: 1.1.5
       '@platforma-sdk/test':
         specifier: 'catalog:'
-        version: 1.5.15(@types/node@22.0.0)(@vitest/ui@2.1.1(vitest@2.1.1))
+        version: 1.5.15(@types/node@22.0.0)(@vitest/ui@2.1.1)
       '@platforma-sdk/workflow-tengo':
         specifier: 'catalog:'
         version: 1.2.8
@@ -830,8 +830,8 @@ packages:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
 
-  '@platforma-open/milaboratories.software-blast@1.1.1':
-    resolution: {integrity: sha512-4iYwSMmto9leoYQVdLEj5YQBvseLqEcBhKoE3d/BJl1sVHCwnjuB6Atq9ex1Lwk8ygW8He54CDrY0PXpb6eoaw==, tarball: https://npm.pkg.github.com/download/@platforma-open/milaboratories.software-blast/1.1.1/3b3bd565ff4ae2698d9ac4392b77fcf93940c53d}
+  '@platforma-open/milaboratories.software-blast@1.1.5':
+    resolution: {integrity: sha512-8n5tF5XcumZjQ0E8rxX02Jwv3wvO2BXj4Fg70qwD9wHSrR2xAQxZPIULnwLsEDMxj++0BfZaMIiwEIJcLFe3uw==}
 
   '@platforma-sdk/block-tools@2.3.4':
     resolution: {integrity: sha512-cIff6ERlFaHZ98Ojo59ZPYzK91Dck2AlBtYdb+YbAEaYLwv4toXaIs3AxTA21RIYoP8EuB0744o5c6XcTZ9h+A==}
@@ -3894,7 +3894,7 @@ snapshots:
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
-  '@platforma-open/milaboratories.software-blast@1.1.1': {}
+  '@platforma-open/milaboratories.software-blast@1.1.5': {}
 
   '@platforma-sdk/block-tools@2.3.4':
     dependencies:
@@ -3919,7 +3919,7 @@ snapshots:
       utility-types: 3.11.0
       zod: 3.23.8
 
-  '@platforma-sdk/test@1.5.15(@types/node@22.0.0)(@vitest/ui@2.1.1(vitest@2.1.1))':
+  '@platforma-sdk/test@1.5.15(@types/node@22.0.0)(@vitest/ui@2.1.1)':
     dependencies:
       '@milaboratories/computable': 2.1.6
       '@milaboratories/pl-client': 2.4.14
