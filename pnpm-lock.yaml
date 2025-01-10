@@ -13,8 +13,8 @@ catalogs:
       specifier: ^1.14.9
       version: 1.14.10
     '@platforma-open/milaboratories.software-blast':
-      specifier: ^1.1.1
-      version: 1.1.1
+      specifier: ^1.1.5
+      version: 1.1.5
     '@platforma-sdk/block-tools':
       specifier: ^2.3.4
       version: 2.3.4
@@ -36,6 +36,9 @@ catalogs:
     tsup:
       specifier: ~8.1.2
       version: 8.1.2
+    turbo:
+      specifier: ^2.3.3
+      version: 2.3.3
     typescript:
       specifier: ^5.5.4
       version: 5.5.4
@@ -55,20 +58,29 @@ catalogs:
 importers:
 
   .:
-    dependencies:
-      '@platforma-open/milaboratories.blast.model':
-        specifier: workspace:*
-        version: link:model
-      '@platforma-open/milaboratories.blast.ui':
-        specifier: workspace:*
-        version: link:ui
-      '@platforma-open/milaboratories.blast.workflow':
-        specifier: workspace:*
-        version: link:workflow
     devDependencies:
       '@changesets/cli':
         specifier: 'catalog:'
         version: 2.27.8
+      turbo:
+        specifier: 'catalog:'
+        version: 2.3.3
+
+  block:
+    dependencies:
+      '@platforma-open/milaboratories.blast.model':
+        specifier: workspace:*
+        version: link:../model
+      '@platforma-open/milaboratories.blast.ui':
+        specifier: workspace:*
+        version: link:../ui
+      '@platforma-open/milaboratories.blast.workflow':
+        specifier: workspace:*
+        version: link:../workflow
+      '@platforma-sdk/model':
+        specifier: 'catalog:'
+        version: 1.2.32
+    devDependencies:
       '@platforma-sdk/block-tools':
         specifier: 'catalog:'
         version: 2.3.4
@@ -124,10 +136,10 @@ importers:
         version: 1.14.10
       '@platforma-open/milaboratories.software-blast':
         specifier: 'catalog:'
-        version: 1.1.1
+        version: 1.1.5
       '@platforma-sdk/test':
         specifier: 'catalog:'
-        version: 1.5.15(@types/node@22.0.0)(@vitest/ui@2.1.1(vitest@2.1.1))
+        version: 1.5.15(@types/node@22.0.0)(@vitest/ui@2.1.1)
       '@platforma-sdk/workflow-tengo':
         specifier: 'catalog:'
         version: 1.2.8
@@ -765,9 +777,6 @@ packages:
   '@milaboratories/pl-model-common@1.3.13':
     resolution: {integrity: sha512-BTeh254CBUQH5dkbjxnwwtmhsjLKBOMKLb8Be4K77k/Mvl6vNJmth14bGIPceS6DXHt41HshgJ9mSr5GSL+5qQ==}
 
-  '@milaboratories/pl-model-middle-layer@1.2.20':
-    resolution: {integrity: sha512-vhARtl5oS5kRzBN/5ddIbdj9rGmhrmh9D//10k05fXN6owtILcYbhHrYBWKttJSQVxBhwBcVhW8G/T2EXpS1bQ==}
-
   '@milaboratories/pl-model-middle-layer@1.4.2':
     resolution: {integrity: sha512-c4dt25HuhenPcA1r6oOE15jYlQtTcxZRxK/xDVVFQdAkTeFTqWcIzqGFJznbE27vn6LHHuPW3hnVAUGFLU2mcQ==}
 
@@ -788,9 +797,6 @@ packages:
     resolution: {integrity: sha512-UWT05MAwizVEbUQC+HDD7VPb26AtZesCAT67CEzWSg4GUbNrOw5c/+TCCLJAS1lq3UQY0i3VV9QOtI1kjVokRQ==}
     os: [darwin, linux, win32]
     hasBin: true
-
-  '@milaboratories/ts-helpers-oclif@1.1.4':
-    resolution: {integrity: sha512-N9l9AA+2Epig4ISkVYLqfau7Vrx6gzcAJR271QvAHdWvklgR2g8qehmL15IuMBARDhcfk9xYL00Y9NkLcFttgA==}
 
   '@milaboratories/ts-helpers-oclif@1.1.5':
     resolution: {integrity: sha512-4nw0xhg73jCiDkGyk/BdT7n1v9Su3YIYWc6pstbfcuH6Deehx+NWXhwe/aRVP1T39IfDqSToFBRfXAewDj1DWg==}
@@ -824,12 +830,8 @@ packages:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
 
-  '@platforma-open/milaboratories.software-blast@1.1.1':
-    resolution: {integrity: sha512-4iYwSMmto9leoYQVdLEj5YQBvseLqEcBhKoE3d/BJl1sVHCwnjuB6Atq9ex1Lwk8ygW8He54CDrY0PXpb6eoaw==, tarball: https://npm.pkg.github.com/download/@platforma-open/milaboratories.software-blast/1.1.1/3b3bd565ff4ae2698d9ac4392b77fcf93940c53d}
-
-  '@platforma-sdk/block-tools@2.1.11':
-    resolution: {integrity: sha512-8hW/nMWEYEggpnmuR/6rNM2KNrFmOqe2zmrkRl1DWel9upm7W6e+dhqISqam7rE7dEg1X6dAY+BYSAvUriDZwQ==}
-    hasBin: true
+  '@platforma-open/milaboratories.software-blast@1.1.5':
+    resolution: {integrity: sha512-8n5tF5XcumZjQ0E8rxX02Jwv3wvO2BXj4Fg70qwD9wHSrR2xAQxZPIULnwLsEDMxj++0BfZaMIiwEIJcLFe3uw==}
 
   '@platforma-sdk/block-tools@2.3.4':
     resolution: {integrity: sha512-cIff6ERlFaHZ98Ojo59ZPYzK91Dck2AlBtYdb+YbAEaYLwv4toXaIs3AxTA21RIYoP8EuB0744o5c6XcTZ9h+A==}
@@ -2569,6 +2571,40 @@ packages:
       typescript:
         optional: true
 
+  turbo-darwin-64@2.3.3:
+    resolution: {integrity: sha512-bxX82xe6du/3rPmm4aCC5RdEilIN99VUld4HkFQuw+mvFg6darNBuQxyWSHZTtc25XgYjQrjsV05888w1grpaA==}
+    cpu: [x64]
+    os: [darwin]
+
+  turbo-darwin-arm64@2.3.3:
+    resolution: {integrity: sha512-DYbQwa3NsAuWkCUYVzfOUBbSUBVQzH5HWUFy2Kgi3fGjIWVZOFk86ss+xsWu//rlEAfYwEmopigsPYSmW4X15A==}
+    cpu: [arm64]
+    os: [darwin]
+
+  turbo-linux-64@2.3.3:
+    resolution: {integrity: sha512-eHj9OIB0dFaP6BxB88jSuaCLsOQSYWBgmhy2ErCu6D2GG6xW3b6e2UWHl/1Ho9FsTg4uVgo4DB9wGsKa5erjUA==}
+    cpu: [x64]
+    os: [linux]
+
+  turbo-linux-arm64@2.3.3:
+    resolution: {integrity: sha512-NmDE/NjZoDj1UWBhMtOPmqFLEBKhzGS61KObfrDEbXvU3lekwHeoPvAMfcovzswzch+kN2DrtbNIlz+/rp8OCg==}
+    cpu: [arm64]
+    os: [linux]
+
+  turbo-windows-64@2.3.3:
+    resolution: {integrity: sha512-O2+BS4QqjK3dOERscXqv7N2GXNcqHr9hXumkMxDj/oGx9oCatIwnnwx34UmzodloSnJpgSqjl8iRWiY65SmYoQ==}
+    cpu: [x64]
+    os: [win32]
+
+  turbo-windows-arm64@2.3.3:
+    resolution: {integrity: sha512-dW4ZK1r6XLPNYLIKjC4o87HxYidtRRcBeo/hZ9Wng2XM/MqqYkAyzJXJGgRMsc0MMEN9z4+ZIfnSNBrA0b08ag==}
+    cpu: [arm64]
+    os: [win32]
+
+  turbo@2.3.3:
+    resolution: {integrity: sha512-DUHWQAcC8BTiUZDRzAYGvpSpGLiaOQPfYXlCieQbwUvmml/LRGIe3raKdrOPOoiX0DYlzxs2nH6BoWJoZrj8hA==}
+    hasBin: true
+
   type-fest@0.21.3:
     resolution: {integrity: sha512-t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w==}
     engines: {node: '>=10'}
@@ -3695,7 +3731,7 @@ snapshots:
 
   '@milaboratories/computable@2.1.6':
     dependencies:
-      '@milaboratories/ts-helpers': 1.0.26
+      '@milaboratories/ts-helpers': 1.0.27
       '@types/node': 20.16.9
       utility-types: 3.11.0
 
@@ -3703,7 +3739,7 @@ snapshots:
     dependencies:
       '@mapbox/node-pre-gyp': 1.0.11
       '@milaboratories/pl-model-common': 1.3.13
-      '@milaboratories/pl-model-middle-layer': 1.2.20
+      '@milaboratories/pl-model-middle-layer': 1.4.2
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -3711,7 +3747,7 @@ snapshots:
   '@milaboratories/pl-client@2.4.14':
     dependencies:
       '@grpc/grpc-js': 1.11.3
-      '@milaboratories/ts-helpers': 1.0.26
+      '@milaboratories/ts-helpers': 1.0.27
       '@protobuf-ts/grpc-transport': 2.9.4(@grpc/grpc-js@1.11.3)
       '@protobuf-ts/runtime': 2.9.4
       '@protobuf-ts/runtime-rpc': 2.9.4
@@ -3732,7 +3768,7 @@ snapshots:
       '@milaboratories/pl-client': 2.4.14
       '@milaboratories/pl-model-common': 1.3.13
       '@milaboratories/pl-tree': 1.3.11
-      '@milaboratories/ts-helpers': 1.0.26
+      '@milaboratories/ts-helpers': 1.0.27
       '@protobuf-ts/grpc-transport': 2.9.4(@grpc/grpc-js@1.11.3)
       '@protobuf-ts/plugin': 2.9.4
       '@protobuf-ts/runtime': 2.9.4
@@ -3751,10 +3787,10 @@ snapshots:
       '@milaboratories/pl-client': 2.4.14
       '@milaboratories/pl-drivers': 1.2.21
       '@milaboratories/pl-model-common': 1.3.13
-      '@milaboratories/pl-model-middle-layer': 1.2.20
+      '@milaboratories/pl-model-middle-layer': 1.4.2
       '@milaboratories/pl-tree': 1.3.11
-      '@milaboratories/ts-helpers': 1.0.26
-      '@platforma-sdk/block-tools': 2.1.11
+      '@milaboratories/ts-helpers': 1.0.27
+      '@platforma-sdk/block-tools': 2.3.4
       '@platforma-sdk/model': 1.2.32
       '@platforma-sdk/workflow-tengo': 1.2.8
       canonicalize: 2.0.0
@@ -3773,12 +3809,6 @@ snapshots:
     dependencies:
       zod: 3.23.8
 
-  '@milaboratories/pl-model-middle-layer@1.2.20':
-    dependencies:
-      '@milaboratories/pl-model-common': 1.3.13
-      utility-types: 3.11.0
-      zod: 3.23.8
-
   '@milaboratories/pl-model-middle-layer@1.4.2':
     dependencies:
       '@milaboratories/pl-model-common': 1.3.13
@@ -3789,7 +3819,7 @@ snapshots:
     dependencies:
       '@milaboratories/computable': 2.1.6
       '@milaboratories/pl-client': 2.4.14
-      '@milaboratories/ts-helpers': 1.0.26
+      '@milaboratories/ts-helpers': 1.0.27
       denque: 2.1.0
       utility-types: 3.11.0
       zod: 3.23.8
@@ -3808,11 +3838,6 @@ snapshots:
       winston: 3.14.2
 
   '@milaboratories/tengo-tester@1.4.4': {}
-
-  '@milaboratories/ts-helpers-oclif@1.1.4':
-    dependencies:
-      '@milaboratories/ts-helpers': 1.0.26
-      '@oclif/core': 4.0.23
 
   '@milaboratories/ts-helpers-oclif@1.1.5':
     dependencies:
@@ -3869,22 +3894,7 @@ snapshots:
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
-  '@platforma-open/milaboratories.software-blast@1.1.1': {}
-
-  '@platforma-sdk/block-tools@2.1.11':
-    dependencies:
-      '@aws-sdk/client-s3': 3.658.1
-      '@milaboratories/pl-model-middle-layer': 1.2.20
-      '@milaboratories/resolve-helper': 1.0.1
-      '@milaboratories/ts-helpers': 1.0.26
-      '@milaboratories/ts-helpers-oclif': 1.1.4
-      '@oclif/core': 4.0.23
-      mime-types: 2.1.35
-      tar: 7.4.3
-      yaml: 2.5.1
-      zod: 3.23.8
-    transitivePeerDependencies:
-      - aws-crt
+  '@platforma-open/milaboratories.software-blast@1.1.5': {}
 
   '@platforma-sdk/block-tools@2.3.4':
     dependencies:
@@ -3909,7 +3919,7 @@ snapshots:
       utility-types: 3.11.0
       zod: 3.23.8
 
-  '@platforma-sdk/test@1.5.15(@types/node@22.0.0)(@vitest/ui@2.1.1(vitest@2.1.1))':
+  '@platforma-sdk/test@1.5.15(@types/node@22.0.0)(@vitest/ui@2.1.1)':
     dependencies:
       '@milaboratories/computable': 2.1.6
       '@milaboratories/pl-client': 2.4.14
@@ -5800,6 +5810,33 @@ snapshots:
       - supports-color
       - tsx
       - yaml
+
+  turbo-darwin-64@2.3.3:
+    optional: true
+
+  turbo-darwin-arm64@2.3.3:
+    optional: true
+
+  turbo-linux-64@2.3.3:
+    optional: true
+
+  turbo-linux-arm64@2.3.3:
+    optional: true
+
+  turbo-windows-64@2.3.3:
+    optional: true
+
+  turbo-windows-arm64@2.3.3:
+    optional: true
+
+  turbo@2.3.3:
+    optionalDependencies:
+      turbo-darwin-64: 2.3.3
+      turbo-darwin-arm64: 2.3.3
+      turbo-linux-64: 2.3.3
+      turbo-linux-arm64: 2.3.3
+      turbo-windows-64: 2.3.3
+      turbo-windows-arm64: 2.3.3
 
   type-fest@0.21.3: {}
 
