@@ -1,5 +1,11 @@
 ## 1.0.0
 
+## 1.0.2
+
+### Patch Changes
+
+- 6cbd341: chore: fix changelog path on block
+
 ## 1.0.1
 
 ### Patch Changes
