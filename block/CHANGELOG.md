@@ -1,5 +1,11 @@
 ## 1.0.0
 
+## 1.0.3
+
+### Patch Changes
+
+- 143f0f4: Updated tags and ranking
+
 ## 1.0.2
 
 ### Patch Changes
