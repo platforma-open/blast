@@ -11,7 +11,7 @@ catalog:
   '@platforma-sdk/block-tools': ^2.6.14
   '@platforma-sdk/test': ^1.44.7
   '@platforma-sdk/tengo-builder': ^2.3.0
-  '@platforma-open/milaboratories.software-blast': ^1.1.5
+  '@platforma-open/milaboratories.software-blast': ^1.2.1
   
   'vue': ^3.5.13
   'vue-tsc': ^2.0.29

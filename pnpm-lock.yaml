@@ -10,8 +10,8 @@ catalogs:
       specifier: ^2.28.1
       version: 2.29.7
     '@platforma-open/milaboratories.software-blast':
-      specifier: ^1.1.5
-      version: 1.1.5
+      specifier: ^1.2.1
+      version: 1.2.1
     '@platforma-sdk/block-tools':
       specifier: ^2.6.14
       version: 2.6.14
@@ -133,7 +133,7 @@ importers:
     devDependencies:
       '@platforma-open/milaboratories.software-blast':
         specifier: 'catalog:'
-        version: 1.1.5
+        version: 1.2.1
       '@platforma-sdk/tengo-builder':
         specifier: 'catalog:'
         version: 2.3.0
@@ -930,8 +930,8 @@ packages:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
 
-  '@platforma-open/milaboratories.software-blast@1.1.5':
-    resolution: {integrity: sha512-8n5tF5XcumZjQ0E8rxX02Jwv3wvO2BXj4Fg70qwD9wHSrR2xAQxZPIULnwLsEDMxj++0BfZaMIiwEIJcLFe3uw==}
+  '@platforma-open/milaboratories.software-blast@1.2.1':
+    resolution: {integrity: sha512-W3ACHCPfncouVZ5vTObDfWJZQfzFoKqAnTO4P6SgKFBv8OzxVHraH/o1TKteQYMt4+Ara6vRdsyBphQk7bTnNQ==}
 
   '@platforma-open/milaboratories.software-ptabler@1.12.4':
     resolution: {integrity: sha512-owDO4imeBgHawQRrHV9GbsA+8WJaIl0Mlxwam1unUsfnCOWxqtbWi9Kt+Q201otp4VjACPbA5KOtO6Czwz4hHg==}
@@ -6327,7 +6327,7 @@ snapshots:
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
-  '@platforma-open/milaboratories.software-blast@1.1.5': {}
+  '@platforma-open/milaboratories.software-blast@1.2.1': {}
 
   '@platforma-open/milaboratories.software-ptabler@1.12.4': {}
 
