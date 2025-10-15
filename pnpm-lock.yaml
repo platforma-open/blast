@@ -130,6 +130,10 @@ importers:
         version: 2.1.6(typescript@5.5.4)
 
   workflow:
+    dependencies:
+      '@platforma-sdk/workflow-tengo':
+        specifier: 'catalog:'
+        version: 5.3.3
     devDependencies:
       '@platforma-open/milaboratories.software-blast':
         specifier: 'catalog:'
@@ -140,9 +144,6 @@ importers:
       '@platforma-sdk/test':
         specifier: 'catalog:'
         version: 1.44.7(@types/node@24.5.2)
-      '@platforma-sdk/workflow-tengo':
-        specifier: 'catalog:'
-        version: 5.3.3
       vitest:
         specifier: 'catalog:'
         version: 2.1.1(@types/node@24.5.2)
